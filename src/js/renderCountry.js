@@ -3,20 +3,19 @@ import countriesListTpl from '../templates/countries-list.hbs';
 import { tooMatchesFoundError, nameError } from './errors';
 import getRefs from './getRefs';
 
-const refs = getRefs()
+const refs = getRefs();
 
 function renderCountry(data) {
     const countiesQuantity = data.length;
-    console.log(countiesQuantity);
 
     if (countiesQuantity > 10) {
 
-        tooMatchesFoundError()
+        tooMatchesFoundError();
         return;
 
     } if (countiesQuantity > 1 && countiesQuantity <= 10) {
 
-        const listMarkup = countriesListTpl(data)
+        const listMarkup = countriesListTpl(data);
         pasteMarkupToCardContainer(listMarkup);
         return;
 
@@ -27,7 +26,7 @@ function renderCountry(data) {
         
     } if (countiesQuantity === undefined) {
 
-        nameError(refs.input.value)
+        nameError(refs.input.value);
 
     }
 }
@@ -36,4 +35,4 @@ function pasteMarkupToCardContainer (markup) {
     refs.cardContainer.innerHTML = markup;
 }
 
-export {renderCountry, pasteMarkupToCardContainer}
+export { renderCountry, pasteMarkupToCardContainer };

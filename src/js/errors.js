@@ -23,4 +23,4 @@ function fetchError() {
     });
 }
 
-export {tooMatchesFoundError, nameError, fetchError}
+export { tooMatchesFoundError, nameError, fetchError };
